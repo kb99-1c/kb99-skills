@@ -29,7 +29,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $BaseUrl = 'https://redmine.kb99.pro'
-$AllowedProjects = @('v8_dev_vetis', '285')
+$AllowedProjects = @('v8_dev_vetis', '285', 'mobile_chz', '286')
 
 [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12

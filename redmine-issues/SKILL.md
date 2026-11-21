@@ -7,9 +7,10 @@ description: "Redmine (redmine.kb99.pro): создание задач в про�
 
 Задачи создаются через REST API от пользователя `bot` («bot claude»). Его ключ лежит в переменной окружения `REDMINE_API_KEY`. Все запросы идут только через [`Redmine.ps1`](Redmine.ps1) из этой папки: скрипт сам находит ключ (в том числе после `setx` без перезапуска), передаёт кириллицу в UTF-8 и не даёт создать задачу вне `v8_dev_vetis`.
 
-```bash
-powershell -NoProfile -ExecutionPolicy Bypass -File .claude/skills/redmine-issues/Redmine.ps1 -Get trackers
-powershell -NoProfile -ExecutionPolicy Bypass -File .claude/skills/redmine-issues/Redmine.ps1 -NewIssue <файл.json> [-WhatIf]
+```powershell
+# Redmine.ps1 лежит в папке этого навыка — там же, где SKILL.md. В DSH это %USERPROFILE%\.dsh\skills\redmine-issues
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dsh\skills\redmine-issues\Redmine.ps1" -Get trackers
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.dsh\skills\redmine-issues\Redmine.ps1" -NewIssue <файл.json> [-WhatIf]
 ```
 
 ## Справка
